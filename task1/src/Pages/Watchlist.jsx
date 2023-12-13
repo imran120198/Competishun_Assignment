@@ -1,12 +1,19 @@
 import React from "react";
 import { useWatchlist } from "../Context/WatchlistContext";
-import { Button, Center, Heading, Img, Text } from "@chakra-ui/react";
+import { Button, Center, Heading, Img, Text, useToast } from "@chakra-ui/react";
 
 const Watchlist = () => {
   const { watchlistMovies } = useWatchlist();
+  const toast = useToast();
 
   const handlePlayNow = () => {
-    alert("Movie Playing");
+    toast({
+      title: "Movie is Playing",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
   };
 
   return (

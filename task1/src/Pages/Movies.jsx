@@ -9,10 +9,12 @@ import {
   Img,
   Input,
   Text,
+  useToast
 } from "@chakra-ui/react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 export default function Movielist() {
+  const toast = useToast()
   const { favoriteMovies, addFavoriteMovie, removeFavoriteMovie } =
     useFavorite();
   const { watchlistMovies, addToWatchlist, removeFromWatchlist } =
@@ -32,7 +34,13 @@ export default function Movielist() {
   };
 
   const handlePlayNow = () => {
-    alert("Movie Playing");
+    toast({
+      title: 'Movie is Playing',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+      position : "top"
+    })
   };
 
   const toggleFavorite = (movie) => {
@@ -40,9 +48,22 @@ export default function Movielist() {
 
     if (isFavorite) {
       removeFavoriteMovie(movie);
+      toast({
+        title: 'Movie is Removed from Fauorite',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+        position : "top"
+      })
     } else {
       addFavoriteMovie(movie);
-      alert("Movie added");
+      toast({
+        title: 'Movie is Added to Fauorite',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+        position : "top"
+      })
     }
   };
 
@@ -53,8 +74,22 @@ export default function Movielist() {
 
     if (isWatchlisted) {
       removeFromWatchlist(movie);
+      toast({
+        title: 'Movie is Removed from Watchlist',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+        position : "top"
+      })
     } else {
       addToWatchlist(movie);
+      toast({
+        title: 'Movie is Added to Watchlist',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+        position : "top"
+      })
     }
   };
 

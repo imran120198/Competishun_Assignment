@@ -1,12 +1,19 @@
 import React from "react";
 import { useFavorite } from "../Context/FavoriteContext";
-import { Button, Center, Heading, Img, Text } from "@chakra-ui/react";
+import { Button, Center, Heading, Img, Text, useToast } from "@chakra-ui/react";
 
 const Favorites = () => {
   const { favoriteMovies } = useFavorite();
+  const toast = useToast();
 
   const handlePlayNow = () => {
-    alert("Movie Playing");
+    toast({
+      title: "Movie is Playing",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
   };
 
   return (
