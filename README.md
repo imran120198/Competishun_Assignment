@@ -58,7 +58,7 @@ been confirmed”.
 
 ### Problem Statement
 ```
-Create an android application with the mentioned flow:
+Create an application with the mentioned flow:
 Firebase Google Login -> Home Page
 Home Page must contain:
 
