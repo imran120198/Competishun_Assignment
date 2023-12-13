@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Box, VStack } from "@chakra-ui/react";
+import Login from "./Pages/Login";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VStack minHeight="100vh" spacing={0}>
+        <Box flex="1" overflow="auto" width="100%">
+          <Login />
+        </Box>
+        <Navbar />
+      </VStack>
     </div>
   );
 }
